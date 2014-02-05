@@ -86,9 +86,9 @@
                 {% if not athlete.us and not athlete.italy and not athlete.canada %}
                 First Olympics</p>
                 {% else %}
-                {% if athlete.us %}{{ athlete.us|title }} 02',{% endif %}
-                {% if athlete.italy %}{{ athlete.italy|title }} 06',{% endif %}
-                {% if athlete.canada %}{{ athlete.canada|title }} 10'{% endif %}
+                {% if athlete.us %}{{ athlete.us|title }} '02,{% endif %}
+                {% if athlete.italy %}{{ athlete.italy|title }} '06,{% endif %}
+                {% if athlete.canada %}{{ athlete.canada|title }} '10{% endif %}
                 </p>
                 {% endif %}
 
