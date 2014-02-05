@@ -1,14 +1,22 @@
 <div id="cover_photo">
-    <img id="cover_img" src="{{ url_for('static', filename='img/devin-logan-cover.jpg') }}" />
-    <h2 id="small_screen_h2">SOCHI 2014</h2>
+    <img id="cover_img" src="{{ photos[0].url }}" />
+    <h2 id="small_screen_h2">OLYMPICS 2014:<br /> VERMONTERS IN SOCHI</h2>
     <div id="photo_credit">
-        <div id="credit_box">
-            <p>Olympian Devin Logan in the halfpipe at the 2011 Freeskiing Grand Prix</p>
-            <p>Credit: Tom Zikas</p>
+        <div id="credit_box" class="hidden-xs">
+            <p>{{ photos[0].caption }}</p>
+            <p>Credit: {{ photos[0].credit|title }}</p>
         </div>
     </div>
     <div id="big_screen_h2">
-        <h2>SOCHI 2014</h2>
+        <h2>OLYMPICS 2014: <br />VERMONTERS IN SOCHI</h2>
         <i class="icon ion-chevron-down"></i>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div id="xs_credit" class="col-xs-12 visible-xs">
+            <p>{{ photos[0].caption }}</p>
+            <p>Credit: {{ photos[0].credit|title }}</p>
+        </div>
     </div>
 </div>

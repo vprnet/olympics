@@ -9,6 +9,4 @@ var photo = window.top.document.getElementById('cover_photo'),
 if ((photo.offsetHeight + navbar.offsetHeight + 20) < window.innerHeight) {
     bigScreenH2.style.display = 'none';
     smallScreenH2.style.display = 'block';
-} else {
-    console.log(photo.offsetHeight + 'px;');
 }

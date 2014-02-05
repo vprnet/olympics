@@ -158,7 +158,8 @@ def reporter_image(url):
     return thumbnail
 
 
-def generate_thumbnail(image_url, size=(220, 165)):
+# Convert this to accept a URL OR a directory
+def generate_thumbnail(image_url, preserve_ratio=False, size=(220, 165)):
     """Take an image src, generate a thumbnail, return new path"""
 
     filename = image_url.rsplit('/', 1)[1]
@@ -169,6 +170,11 @@ def generate_thumbnail(image_url, size=(220, 165)):
         img_file = urllib.urlopen(image_url)
         img = StringIO(img_file.read())
         image = Image.open(img)
+        if preserve_ratio:
+            width = image.size[0]
+            height = image.size[1]
+            new_height = size[0] * height / width
+            size = (size[0], new_height)
         im = ImageOps.fit(image, size, Image.ANTIALIAS)
         im.save(path_to_save)
 
@@ -192,7 +198,7 @@ def grab_ss(key, sheet='od6'):
         "list/%s/%s/public/values?alt=json") % (key, sheet)
     r = requests.get(url)
     j = json.loads(r.text)
-    json_ss = j['feed']['entry']
+    json_ss = j['feed'].get('entry', '')
 
     return json_ss
 

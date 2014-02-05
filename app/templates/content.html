@@ -6,41 +6,115 @@
 
 {% include "cover-photo.html" %}
 
+<div id="schedule_results" class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div id="todays_events">
+            <p class="img_credit">{{ photos[1].credit }}</p>
+            <img class="img-responsive" src="{{ photos[1].url }}" alt="Today's Events Photo">
+                <div class="padding_box">
+                    <p id="vt_green"><span class="vermonter_event">Green</span> indicates a Vermonter is competing in the event</p>
+                    {% for sport in sports %}
+                        <h4>{{ sport.name }}</h4>
+                        <p class="events">
+                        {% for event in sport.events %}
+                            {% if event %}
+                                {% if loop.index0 != 0 %}, {% endif %}
+                                <span {% if sport.vermonters[loop.index0] %}class="vermonter_event"{% endif %}>{{ event|title }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                    </p>
+                    <p
+                    <p class="olympic_link"><a href="http://www.sochi2014.com/en/schedule-and-results" alt="Full Olympics Schedule">Click here</a> for the full schedule of events</p>
+                </div>
+            <h3>Today's Events</h3>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div id="vermonter_results">
+                <p class="img_credit">{{ photos[2].credit }}</p>
+                <img class="img-responsive" src="{{ photos[2].url }}" alt="Medal Ceremony">
+                <div class="padding_box">
+                {% if results %}
+                    {% for result in results %}
+                        <h4>{{ result.name|title }}</h4>
+                        <p>{{ result.medal|title }} in {{ result.event|title }}</p>
+                    {% endfor %}
+                {% else %}
+                    <p id="no_results">No results were reported yesterday for Vermont's Olympians</p>
+                    {% endif %}
+                    <p class="olympic_link"><a href="http://www.sochi2014.com/en/last-results" alt="Latest Olympic results">Click here</a> for all of the latest results</p>
+                </div>
+            <h3>Yesterday's Results</h3>
+            </div>
+        </div>
+        <div id="uw" class="col-md-4 col-sm-12 clearfix">
+            {% include "underwriter.html" %}
+            <div id="updated">
+                <p>This page is updated once each morning, seven days a week during the Olympics.</p>
+                <h4>Last update</h4> 
+                <p>{{ updated[0].updated }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container">
     <div class="row">
-        <div class="col-sm-8">
-            <div class="row">
-            {% for i in range(15) %}
-                <div class="col-sm-4">
-                    <h2>Athelete</h2>
-                    <img class="img-responsive" src="{{ url_for('static', filename='img/kelly-clark-olympics2014.jpg') }}" alt="Kelly Clark Olympic bio photo">
+    <div class="col-xs-12">
+        <h2 id="athletes">Vermont Olympians</h2>
+        <p id="touch">Tap on a photo to see an athlete bio.</p>
+    </div>
+    {% for athlete in athletes %}
+        <div class="athlete_card col-lg-3 col-sm-6">
+            <div class="athlete_bio">
+                <h2>{{ athlete.name|title }}</h2>
+                <h3>{{ athlete.event|title }}</h3>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <h4>Vermont Home</h4>
+                        <p class="facts">{{ athlete.home }}</p>
+                    </div>
+                    <div class="col-xs-4">
+                        <h4>Age</h4>
+                        <p class="facts">{{ athlete.age }}</p>
+                    </div>
                 </div>
-                {% if loop.index is divisibleby 3 %}
-            </div>
-            <div class="row">
+                <h4>Olympic Experience</h4>
+                <p class="facts">
+                {% if not athlete.us and not athlete.italy and not athlete.canada %}
+                First Olympics</p>
+                {% else %}
+                {% if athlete.us %}{{ athlete.us|title }} 02',{% endif %}
+                {% if athlete.italy %}{{ athlete.italy|title }} 06',{% endif %}
+                {% if athlete.canada %}{{ athlete.canada|title }} 10'{% endif %}
+                </p>
                 {% endif %}
-            {% endfor %}
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h3>Today's Events</h3>
-                    <p>Biatholon</p>
-                    <p>Curling</p>
-                    <p>Broom Ball</p>
+
+                <div class="bio_copy">
+                    <p>{{ athlete.career }}</p>
+                    <p>{{ athlete.story }}</p>
                 </div>
+                {% if athlete.result2014 %}
+                <h4>2014 Results</h4>
+                <p>{{ athlete.result2014|replace(';', '</p><p>')|safe }}</p>
+                {% endif %}
+                <p class="photo_credit">Photo Credit: {{ athlete.credit }}</p>
             </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <h3>Vermonter Results</h3>
-                    <p>Gold</p>
-                    <p>Silver</p>
-                    <p>Bronze</p>
-                    <p>Competed</p>
-                </div>
-            </div>
+
+            <img class="img-responsive" src="{{ url_for('static', filename='img/athletes/%s' %(athlete.image)) }}" alt="{{ athlete.name|title }} Olympic bio photo">
         </div>
+        {% if loop.index is divisibleby 4 %}
+    </div>
+    <div class="row">
+        {% elif loop.index is divisibleby 2 %}
+        <div class="clearfix visible-md">
+        </div>
+        <div class="clearfix visible-sm">
+        </div>
+        {% endif %}
+    {% endfor %}
     </div>
 </div>
 
