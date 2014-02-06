@@ -8,7 +8,7 @@ import os
 from bs4 import BeautifulSoup as Soup
 from datetime import datetime
 from cStringIO import StringIO
-from config import NPR_API_KEY
+from config import NPR_API_KEY, ABSOLUTE_PATH
 
 
 def api_feed(tag, numResults=1, char_limit=240, thumbnail=False):

@@ -1,6 +1,6 @@
 from index import app
 from flask import render_template, request
-from config import BASE_URL
+from config import BASE_URL, ABSOLUTE_PATH
 from query import api_feed, drive_to_json, generate_thumbnail
 
 
@@ -33,11 +33,11 @@ def index():
     photos = drive_to_json('0AtWnpcGxoF0xdFE4QU56eTZnN0wwNjZ2NDMwN2RoeXc',
         ['url', 'caption', 'credit'],
         sheet='od7')
-    photos[0]['url'] = generate_thumbnail(photos[0]['url'],
+    photos[0]['url'] = generate_thumbnail(ABSOLUTE_PATH + photos[0]['url'],
         preserve_ratio=True, size=(2000, 1000))
-    photos[1]['url'] = generate_thumbnail(photos[1]['url'],
+    photos[1]['url'] = generate_thumbnail(ABSOLUTE_PATH + photos[1]['url'],
         size=(375, 250))
-    photos[2]['url'] = generate_thumbnail(photos[2]['url'],
+    photos[2]['url'] = generate_thumbnail(ABSOLUTE_PATH + photos[2]['url'],
         size=(375, 250))
     updated = drive_to_json('0AtWnpcGxoF0xdFE4QU56eTZnN0wwNjZ2NDMwN2RoeXc',
         ['updated'],
