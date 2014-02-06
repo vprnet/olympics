@@ -1,6 +1,6 @@
 from index import app
 from flask import render_template, request
-from config import BASE_URL, ABSOLUTE_PATH
+from config import BASE_URL
 from query import api_feed, drive_to_json, generate_thumbnail
 
 
