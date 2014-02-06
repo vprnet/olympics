@@ -20,8 +20,6 @@ if len(sys.argv) > 1:
 else:
     PROJECT_ROOT = '/'
 
-print PROJECT_ROOT
-
 
 class WebFactionMiddleware(object):
 
