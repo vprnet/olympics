@@ -27,6 +27,7 @@ def api_feed(tag, numResults=1, char_limit=240, thumbnail=False):
         try:
             story_image = story['image'][0]['crop'][0]
             image = story_image['src']
+            image = generate_thumbnail(image, preserve_ratio=True, size=(120, 100))
             width = story_image['width']
             height = story_image['height']
             if int(width) > int(height):
