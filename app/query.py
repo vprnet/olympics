@@ -51,9 +51,13 @@ def api_feed(tag, numResults=1, char_limit=240, thumbnail=False):
         char_count = 0
         paragraphs_needed = 0
         while char_count < char_limit:
-            paragraph = full_text[paragraphs_needed]
-            char_count += len(paragraph)
-            paragraphs_needed += 1
+	    try:
+	        paragraph = full_text[paragraphs_needed]
+	        char_count += len(paragraph)
+	        paragraphs_needed += 1
+	    except IndexError:
+		paragraphs_needed = 1
+		
 
         text = full_text[:paragraphs_needed]
 
@@ -163,8 +167,8 @@ def generate_thumbnail(image_url, preserve_ratio=False, size=(220, 165)):
     """Take an image src, generate a thumbnail, return new path"""
 
     filename = image_url.rsplit('/', 1)[1]
-    path_to_read = ABSOLUTE_PATH + 'static/img/thumbnails/' + filename
-    path_to_save = ABSOLUTE_PATH + 'app/' + path_to_read
+    path_to_read = 'static/img/thumbnails/' + filename
+    path_to_save = ABSOLUTE_PATH + path_to_read
 
     if not os.path.isfile(path_to_save):
         img_file = urllib.urlopen(image_url)
