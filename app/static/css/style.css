@@ -2438,8 +2438,9 @@ div.athlete_card {
       font-size: 12px; }
       div.athlete_card div.athlete_bio div.bio_copy p {
         margin-bottom: 5px; }
-    div.athlete_card div.athlete_bio:hover {
-      opacity: 0.9; }
+    div.athlete_card div.athlete_bio:hover, div.athlete_card div.athlete_bio:active {
+      opacity: 0.9;
+      transition: all 0.25s; }
     div.athlete_card div.athlete_bio p.photo_credit {
       position: absolute;
       bottom: 0;
@@ -2550,4 +2551,5 @@ div.athlete_card {
 #touch {
   text-align: center;
   color: #75787b;
-  display: none; }
+  display: none;
+  margin-top: -25px; }
