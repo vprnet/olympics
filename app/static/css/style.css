@@ -2474,11 +2474,11 @@ div.athlete_card {
     position: relative;
     background: #f7f8f8;
     padding-bottom: 50px; }
-  #schedule_results #todays_events, #schedule_results #vermonter_results {
+  #schedule_results #todays_events, #schedule_results #vermonter_results, #schedule_results #updated {
     max-width: 375px;
     position: relative;
     margin: 0 auto 30px; }
-    #schedule_results #todays_events p.img_credit, #schedule_results #vermonter_results p.img_credit {
+    #schedule_results #todays_events p.img_credit, #schedule_results #vermonter_results p.img_credit, #schedule_results #updated p.img_credit {
       position: absolute;
       top: 5px;
       right: 5px;
@@ -2487,21 +2487,21 @@ div.athlete_card {
       padding: 3px;
       font-size: 10px;
       color: black; }
-    #schedule_results #todays_events h4, #schedule_results #vermonter_results h4 {
+    #schedule_results #todays_events h4, #schedule_results #vermonter_results h4, #schedule_results #updated h4 {
       font-size: 14px;
       margin: 0; }
-    #schedule_results #todays_events p, #schedule_results #vermonter_results p {
+    #schedule_results #todays_events p, #schedule_results #vermonter_results p, #schedule_results #updated p {
       font-size: 12px;
       color: #75787b;
       line-height: 1.2em; }
-    #schedule_results #todays_events a, #schedule_results #vermonter_results a {
+    #schedule_results #todays_events a, #schedule_results #vermonter_results a, #schedule_results #updated a {
       text-decoration: none;
       border-bottom: 2px solid #dddedf;
       color: #4b5151; }
-      #schedule_results #todays_events a:hover, #schedule_results #vermonter_results a:hover {
+      #schedule_results #todays_events a:hover, #schedule_results #vermonter_results a:hover, #schedule_results #updated a:hover {
         border-color: #8f9294;
         color: #3f4444; }
-    #schedule_results #todays_events p.olympic_link, #schedule_results #vermonter_results p.olympic_link {
+    #schedule_results #todays_events p.olympic_link, #schedule_results #vermonter_results p.olympic_link, #schedule_results #updated p.olympic_link {
       position: absolute;
       bottom: 5px;
       left: 0;
@@ -2522,18 +2522,20 @@ div.athlete_card {
     margin: 40px 40px;
     text-align: center;
     font-size: 14px; }
-  #schedule_results #updated {
-    background: #f7f8f8;
-    padding: 30px 20px;
-    color: #75787b;
-    position: relative;
-    bottom: 0; }
-    #schedule_results #updated h4 {
-      font-size: 16px;
-      margin: 0; }
+  #schedule_results #updated p {
+    text-align: center;
+    font-size: 18px;
+    padding-top: 50px; }
+  #schedule_results #updated .padding_box {
+    min-height: 150px; }
+  #schedule_results #updated h3 {
+    background: #e77565; }
   @media (max-width: 330px) {
     #schedule_results #google-ad {
       margin-left: -5px; } }
+  @media (max-width: 500px) {
+    #schedule_results #updated p {
+      font-size: 14px; } }
 
 #athletes {
   text-align: center;

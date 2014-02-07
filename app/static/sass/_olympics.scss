@@ -52,7 +52,7 @@ div.athlete_card {
             color: $gray;
         }
     }
-    @media (max-width: 1200px) and (min-width: 992px), 
+    @media (max-width: 1200px) and (min-width: 992px),
     (max-width: 768px) and (min-width: 400px) {
         div.athlete_bio {
             h2 {
@@ -91,7 +91,7 @@ div.athlete_card {
         background: lighten($gray, 50%);
         padding-bottom: 50px;
     }
-    #todays_events, #vermonter_results {
+    #todays_events, #vermonter_results, #updated {
         max-width: 375px;
         position: relative;
         margin: 0 auto 30px;
@@ -150,19 +150,28 @@ div.athlete_card {
         }
     }
     #updated {
-        background: lighten($gray, 50%);
-        padding: 30px 20px;
-        color: $gray;
-        position: relative;
-        bottom: 0;
-        h4 {
-            font-size: 16px;
-            margin: 0;
+        p {
+            text-align: center;
+            font-size: 18px;
+            padding-top: 50px;
+        }
+        .padding_box {
+            min-height: 150px;
+        }
+        h3 {
+            background: lighten($red, 10%);
         }
     }
     @media (max-width: 330px) {
         #google-ad {
             margin-left: -5px;
+        }
+    }
+    @media (max-width: 500px) {
+        #updated {
+            p {
+                font-size: 14px;
+            }
         }
     }
 }
