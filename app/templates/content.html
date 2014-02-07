@@ -52,9 +52,10 @@
         <div id="uw" class="col-md-4 col-sm-12 clearfix">
             {% include "underwriter.html" %}
             <div id="updated">
-                <p>This page is updated once each morning, seven days a week during the Olympics.</p>
-                <h4>Last update</h4> 
-                <p>{{ updated[0].updated }}</p>
+                <div class="padding_box">
+                    <p>{{ updated[0].updated }}</p>
+                </div>
+                <h3>Last Updated</h3>
             </div>
         </div>
     </div>
@@ -122,5 +123,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="{{ url_for('static', filename='js/script-ck.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script1-ck.js') }}"></script>
 {% endblock %}
