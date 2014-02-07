@@ -41,8 +41,9 @@ div.athlete_card {
                 margin-bottom: 5px;
             }
         }
-        &:hover {
+        &:hover, &:active {
             opacity: 0.9;
+            transition: all 0.25s;
         }
         p.photo_credit {
             position: absolute;
@@ -184,4 +185,5 @@ div.athlete_card {
     text-align: center;
     color: $gray;
     display: none;
+    margin-top: -25px;
 }
