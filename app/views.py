@@ -47,10 +47,10 @@ def index():
         athlete['image'] = "%s.jpg" % (athlete['name'].title().replace(' ', '-'))
 
     social = {
-        'title': "Vermonters in Sochi",
+        'title': "Olympics 2014: Vermonters in Sochi",
         'subtitle': "VPR's Coverage Of The 2014 Olympics",
         'img': photos[0]['url'],
-        'description': "Follow Kelly Clark, Hannah Kearney and other Vermont Olympians as they compete in Russia.",
+        'description': "Read athlete bios and follow VPR's ongoing coverage of Vermonters in the Sochi Games, including upcoming events and daily results.",
         'twitter_text': "Olympics 2014: Vermonters in Sochi",
         'twitter_hashtag': "Olympics,VT,Sochi2014"
     }
