@@ -48,7 +48,7 @@ def api_feed(tag, numResults=1, char_limit=240, thumbnail=False):
         full_text = [i['$text'] for i in story['text']['paragraph'] if len(i) > 1]
         # if len(i) > 1 ignores pars w/ no text, i.e. when images or audio
 
-        text = full_text[0]
+        text = full_text[:1]
 
         if thumbnail:
             try:
