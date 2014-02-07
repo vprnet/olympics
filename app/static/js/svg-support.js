@@ -10,4 +10,7 @@ Modernizr.load({
 
 if (Modernizr.touch) {
     $('#touch').attr('style', 'display: block;');
+    $('div.athlete_bio').on('mouseover', function() {
+        $(this).toggleClass('active_bio');
+    });
 }

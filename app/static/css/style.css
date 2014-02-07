@@ -2438,7 +2438,7 @@ div.athlete_card {
       font-size: 12px; }
       div.athlete_card div.athlete_bio div.bio_copy p {
         margin-bottom: 5px; }
-    div.athlete_card div.athlete_bio:hover, div.athlete_card div.athlete_bio:active {
+    div.athlete_card div.athlete_bio:hover, div.athlete_card div.athlete_bio .active_bio {
       opacity: 0.9;
       transition: all 0.25s; }
     div.athlete_card div.athlete_bio p.photo_credit {

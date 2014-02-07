@@ -41,7 +41,7 @@ div.athlete_card {
                 margin-bottom: 5px;
             }
         }
-        &:hover, &:active {
+        &:hover, .active_bio {
             opacity: 0.9;
             transition: all 0.25s;
         }
