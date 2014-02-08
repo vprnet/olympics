@@ -43,11 +43,10 @@ div.athlete_card {
         }
         &:hover, .active_bio {
             opacity: 0.9;
-            transition: all 0.25s;
         }
         p.photo_credit {
             position: absolute;
-            bottom: 0;
+            bottom: 2px;
             font-size: 10px;
             color: $gray;
         }
@@ -88,7 +87,7 @@ div.athlete_card {
         padding: 10px 15px;
         min-height: 220px;
         position: relative;
-        background: lighten($gray, 50%);
+        background: lighten($gray, 45%);
         padding-bottom: 50px;
     }
     #todays_events, #vermonter_results, #updated {
@@ -97,7 +96,7 @@ div.athlete_card {
         margin: 0 auto 30px;
         p.img_credit {
             position: absolute;
-            top: 5px;
+            bottom: 0px;
             right: 5px;
             background: white;
             opacity: 0.5;
@@ -153,10 +152,10 @@ div.athlete_card {
         p {
             text-align: center;
             font-size: 18px;
-            padding-top: 50px;
         }
         .padding_box {
-            min-height: 150px;
+            min-height: 0px;
+            padding-top: 50px;
         }
         h3 {
             background: lighten($red, 10%);
@@ -167,7 +166,7 @@ div.athlete_card {
             margin-left: -5px;
         }
     }
-    @media (max-width: 500px) {
+    @media (max-width: 1200px) {
         #updated {
             p {
                 font-size: 14px;

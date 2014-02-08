@@ -10,8 +10,7 @@
     <div class="row">
         <div class="col-md-4 col-sm-6">
             <div id="todays_events">
-            <p class="img_credit">{{ photos[1].credit }}</p>
-            <img class="img-responsive" src="{{ photos[1].url }}" alt="Today's Events Photo">
+                <h3>Today's Events</h3>
                 <div class="padding_box">
                     <p id="vt_green"><span class="vermonter_event">Green</span> indicates a Vermonter is competing in the event</p>
                     {% for sport in sports %}
@@ -28,13 +27,13 @@
                     <p
                     <p class="olympic_link"><a href="http://www.sochi2014.com/en/schedule-and-results" alt="Full Olympics Schedule">Click here</a> for the full schedule of events</p>
                 </div>
-            <h3>Today's Events</h3>
+                <p class="img_credit">{{ photos[1].credit }}</p>
+                <img class="img-responsive" src="{{ photos[1].url }}" alt="Today's Events Photo">
             </div>
         </div>
         <div class="col-md-4 col-sm-6">
             <div id="vermonter_results">
-                <p class="img_credit">{{ photos[2].credit }}</p>
-                <img class="img-responsive" src="{{ photos[2].url }}" alt="Medal Ceremony">
+                <h3>Yesterday's Results</h3>
                 <div class="padding_box">
                 {% if results %}
                     {% for result in results %}
@@ -46,17 +45,18 @@
                     {% endif %}
                     <p class="olympic_link"><a href="http://www.sochi2014.com/en/last-results" alt="Latest Olympic results">Click here</a> for all of the latest results</p>
                 </div>
-            <h3>Yesterday's Results</h3>
+                <p class="img_credit">{{ photos[2].credit }}</p>
+                <img class="img-responsive" src="{{ photos[2].url }}" alt="Medal Ceremony">
             </div>
         </div>
         <div id="uw" class="col-md-4 col-sm-12 clearfix">
-            {% include "underwriter.html" %}
             <div id="updated">
+                <h3>Last Updated</h3>
                 <div class="padding_box">
                     <p>{{ updated[0].updated }}</p>
                 </div>
-                <h3>Last Updated</h3>
             </div>
+            {% include "underwriter.html" %}
         </div>
     </div>
 </div>
@@ -123,5 +123,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="{{ url_for('static', filename='js/script1-ck.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script2-ck.js') }}"></script>
 {% endblock %}
