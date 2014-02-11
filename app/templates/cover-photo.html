@@ -1,5 +1,5 @@
 <div id="cover_photo">
-    <img id="cover_img" src="{{ photos[0].url }}" />
+    <img id="cover_img" src="{{ url_for('static', filename=photos[0].url) }}" />
     <h2 id="small_screen_h2">OLYMPICS 2014:<br /> VERMONTERS IN SOCHI</h2>
     <div id="photo_credit">
         <div id="credit_box" class="hidden-xs">

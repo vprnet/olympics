@@ -46,7 +46,7 @@
                     <p class="olympic_link"><a href="http://www.sochi2014.com/en/last-results" alt="Latest Olympic results">Click here</a> for all of the latest results</p>
                 </div>
                 <p class="img_credit">{{ photos[2].credit }}</p>
-                <img class="img-responsive" src="{{ photos[2].url }}" alt="Medal Ceremony">
+                <img class="img-responsive" src="{{ url_for('static', filename=photos[2].url) }}" alt="Medal Ceremony">
             </div>
         </div>
         <div id="uw" class="col-md-4 col-sm-12 clearfix">
