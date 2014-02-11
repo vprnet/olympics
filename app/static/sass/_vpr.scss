@@ -89,6 +89,9 @@ footer {
             display: inline
         }
     }
+    @media (max-width: 330px) {
+        margin-left: -5px;
+    }
 }
 
 
