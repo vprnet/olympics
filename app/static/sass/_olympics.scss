@@ -49,6 +49,7 @@ div.athlete_card {
             bottom: 2px;
             font-size: 10px;
             color: $gray;
+            width: 30%;
         }
     }
     @media (max-width: 1200px) and (min-width: 992px),
@@ -159,11 +160,6 @@ div.athlete_card {
         }
         h3 {
             background: lighten($red, 10%);
-        }
-    }
-    @media (max-width: 330px) {
-        #google-ad {
-            margin-left: -5px;
         }
     }
     @media (max-width: 1200px) {
