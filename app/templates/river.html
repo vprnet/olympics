@@ -17,7 +17,7 @@
                 <div class="col-xs-12">
                     <div class="story_image">
                     {% if story.image %}
-                        <a href="{{ story.link }}"><img src="{{ story.image }}" class="img-responsive pull-left" alt="{{ story.title }}"></a>
+                        <a href="{{ story.link }}"><img src="{{ url_for('static', filename=story.image) }}" class="img-responsive pull-left" alt="{{ story.title }}"></a>
                     {% endif %}
                     </div>
                     {% for paragraph in story.text %}
