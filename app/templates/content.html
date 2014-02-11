@@ -28,7 +28,7 @@
                     <p class="olympic_link"><a href="http://www.sochi2014.com/en/schedule-and-results" alt="Full Olympics Schedule">Click here</a> for the full schedule of events</p>
                 </div>
                 <p class="img_credit">{{ photos[1].credit }}</p>
-                <img class="img-responsive" src="{{ photos[1].url }}" alt="Today's Events Photo">
+                <img class="img-responsive" src="{{ url_for('static', filename=photos[1].url) }}" alt="Today's Events Photo">
             </div>
         </div>
         <div class="col-md-4 col-sm-6">
