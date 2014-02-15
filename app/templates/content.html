@@ -117,11 +117,46 @@
         {% endif %}
     {% endfor %}
     </div>
+    <div class="row" id="aggregated_results">
+        <div class="col-sm-10 col-sm-offset-1">
+            <div id="aggregated_results">
+                <h3>All Vermonter Results</h3>
+                <div class="padding_box">
+                    {% for athlete in athletes %}
+                    {% if loop.index is not divisibleby 2 %}
+                    <div class="row">
+                    {% endif %}
+                        {% if loop.index is not divisibleby 2 %}
+                        <div class="col-sm-6">
+                            <h4>{{ athlete.name|title }}</h4>
+                            {% if athlete.result2014 %}
+                            <p class="athlete_result">{{ athlete.result2014 }}</p>
+                            {% else %}
+                            <p class="athlete_result">Results not yet reported. Check back soon.</p>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                        {% if loop.index is divisibleby 2 %}
+                        <div class="col-sm-6 clearfix">
+                            <h4>{{ athlete.name|title }}</h4>
+                            {% if athlete.result2014 %}
+                            <p class="athlete_result">{{ athlete.result2014 }}</p>
+                            {% else %}
+                            <p class="athlete_result">Results not yet reported. Check back soon.</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% include "river.html" %}
 {% endblock %}
 
 {% block scripts %}
-<script src="{{ url_for('static', filename='js/script2-ck.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.3-ck.js') }}"></script>
 {% endblock %}
