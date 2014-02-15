@@ -215,9 +215,16 @@ div.athlete_card {
         background: lighten($blue, 10%);
         margin-top: 0 !important;
     }
-    p.athlete_result {
+    p.athlete_result, p.olympic_link {
         font-size: 12px;
         color: $gray;
+    }
+    p.olympic_link {
+        text-align: center;
+        margin-top: 40px;
+        a {
+            @include lt_link(lighten($gray, 40%), $gray, 2px);
+        }
     }
     @media (max-width:768px) {
         max-width: 485px;
