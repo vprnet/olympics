@@ -7,55 +7,109 @@
 {% include "cover-photo.html" %}
 
 <div id="schedule_results" class="container">
-    <div class="row">
-        <div class="col-md-4 col-sm-6">
-            <div id="todays_events">
-                <h3>Today's Events</h3>
+    <div class="row" id="aggregated_results">
+        <div class="col-md-8">
+            <div id="aggregated_results">
+                <h3>All Vermonter Results</h3>
                 <div class="padding_box">
-                    <p id="vt_green"><span class="vermonter_event">Green</span> indicates a Vermonter is competing in the event</p>
-                    {% for sport in sports %}
-                        <h4>{{ sport.name }}</h4>
-                        <p class="events">
-                        {% for event in sport.events %}
-                            {% if event %}
-                                {% if loop.index0 != 0 %}, {% endif %}
-                                <span {% if sport.vermonters[loop.index0] %}class="vermonter_event"{% endif %}>{{ event|title }}</span>
-                            {% endif %}
-                        {% endfor %}
-                    {% endfor %}
-                    </p>
-                    <p
-                    <p class="olympic_link"><a href="http://www.sochi2014.com/en/schedule-and-results" alt="Full Olympics Schedule">Click here</a> for the full schedule of events</p>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h4>Kelly Clark <i class="bronze icon ion-ios7-circle-filled"></i></h4>
+                            <p class="athlete_result"><span class="medal">Bronze</span> in Women&#39;s Halfpipe</p>
+                        </div>
+                        <div class="col-sm-6 clearfix">
+                            <h4>Hannah Teter</h4>
+                            <p class="athlete_result">4th in Women&#39;s Halfpipe</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h4>Hannah Kearney <i class="bronze icon ion-ios7-circle-filled"></i></h4>
+                            <p class="athlete_result"><span class="medal">Bronze</span> in Women&#39;s Moguls</p>
+                        </div>
+                        <div class="col-sm-6 clearfix">
+                            <h4>Lindsey Jacobellis</h4>
+                            <p class="athlete_result">7th in Women&#39;s Snowboard Cross</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h4>Devin Logan <i class="silver icon ion-ios7-circle-filled"></i></h4>
+                            <p class="athlete_result"><span class="medal">Silver</span> in Women&#39;s Ski Slopestyle</p>
+                        </div>
+                        <div class="col-sm-6 clearfix">
+                            <h4>Ty Walker</h4>
+                            <p class="athlete_result">6th in Women&#39;s Slopestyle Semifinals
+</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h4>Nolan Kasper</h4>
+                            <p class="athlete_result">13th in Men&#39;s; Slalom</p>
+                        </div>
+                        <div class="col-sm-6 clearfix">
+                            <h4>Andy Newell</h4>
+                            <p class="athlete_result">11th in Men&#39;s Relay 4x10k</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h4>Liz Stephen</h4>
+                            <p class="athlete_result">12th in Women&#39;s skiathlon 7.5k</p>
+                            <p class="athlete_result">9th in Women&#39;s 4x5k Relay</p>
+                        </div>
+                        <div class="col-sm-6 clearfix">
+                            <h4>Ida Sargent</h4>
+                            <p class="athlete_result">19th in Women&#39;s Free Sprint</p>
+                            <p class="athlete_result">34th in Women&#39;s 10k Classic</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h4>Hannah Dreissigacker</h4>
+                            <p class="athlete_result">65th in Women&#39;s 7.5k Sprint</p>
+                            <p class="athlete_result">23rd in Women&#39;s 15k Individual</p>
+                            <p class="athlete_result">9th in Mixed Team Relay</p>
+                            <p class="athlete_result">7th in 4x6 relay</p>
+                        </div>
+                        <div class="col-sm-6 clearfix">
+                            <h4>Susan Dunklee</h4>
+                            <p class="athlete_result">14th in 7.5k Sprint</p>
+                            <p class="athlete_result">18th in 10k Pursuit</p>
+                            <p class="athlete_result">34th in 15k Individual</p>
+                            <p class="athlete_result">12th in 12.5k Mass Start</p>
+                            <p class="athlete_result">9th in Mixed Team Relay</p>
+                            <p class="athlete_result">7th in 4x6 Relay</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h4>Sophie Caldwell</h4>
+                            <p class="athlete_result">6th in Women&#39;s Free Sprint</p>
+                            <p class="athlete_result">32nd in Women&#39;s 10k Classic</p>
+                            <p class="athlete_result">8th in Team Sprint Classic</p>
+                        </div>
+                        <div class="col-sm-6 clearfix">
+                            <h4>Mikaela Shiffrin <i class="gold icon ion-ios7-circle-filled"></i></h4>
+                            <p class="athlete_result"><span class="medal">GOLD</span> in slalom</p>
+                            <p class="athlete_result">5th in Women&#39;s Giant Slalom</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h4>Jackie Hernandez</h4>
+                            <p class="athlete_result">DNS, Women&#39;s Snowboard Cross Quarterfinals</p>
+                        </div>
+                        <div class="col-sm-6 clearfix">
+                            <h4>Alex Deibold <i class="bronze icon ion-ios7-circle-filled"></i></h4>
+                            <p class="athlete_result"><span class="medal">Bronze</span> in Men&#39;s Snowboard Cross</p>
+                        </div>
+                    </div>
                 </div>
-                <p class="img_credit">{{ photos[1].credit }}</p>
-                <img class="img-responsive" src="{{ url_for('static', filename=photos[1].url) }}" alt="Today's Events Photo">
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6">
-            <div id="vermonter_results">
-                <h3>Recent Results</h3>
-                <div class="padding_box">
-                {% if results %}
-                    {% for result in results %}
-                        <h4>{{ result.name|title }}</h4>
-                        <p>{{ result.medal|title }} in {{ result.event|title }}</p>
-                    {% endfor %}
-                {% else %}
-                    <p id="no_results">No results were reported yesterday for Vermont's Olympians</p>
-                    {% endif %}
-                    <p class="olympic_link"><a href="#aggregated_results" alt="Latest Olympic results">Click here</a> for full results of Vermont's Olympians</p>
-                </div>
-                <p class="img_credit">{{ photos[2].credit }}</p>
-                <img class="img-responsive" src="{{ url_for('static', filename=photos[2].url) }}" alt="Medal Ceremony">
             </div>
         </div>
         <div id="uw" class="col-md-4 col-sm-12 clearfix">
-            <div id="updated">
-                <h3>Last Updated</h3>
-                <div class="padding_box">
-                    <p>{{ updated[0].updated }}</p>
-                </div>
-            </div>
             {% include "underwriter.html" %}
         </div>
     </div>
@@ -99,7 +153,7 @@
                 </div>
                 {% if athlete.result2014 %}
                 <h4>2014 Results</h4>
-                <p>{{ athlete.result2014|replace(';', '</p><p>')|safe }}</p>
+                <p class="card_result">{{ athlete.result2014 }}</p>
                 {% endif %}
                 <p class="photo_credit">Photo Credit: {{ athlete.credit }}</p>
             </div>
@@ -117,51 +171,11 @@
         {% endif %}
     {% endfor %}
     </div>
-    <div class="row" id="aggregated_results">
-        <div class="col-sm-10 col-sm-offset-1">
-            <div id="aggregated_results">
-                <h3>All Vermonter Results</h3>
-                <div class="padding_box">
-                    {% for athlete in athletes %}
-                    {% if loop.index is not divisibleby 2 %}
-                    <div class="row">
-                    {% endif %}
-                        {% if loop.index is not divisibleby 2 %}
-                        <div class="col-sm-6">
-                            <h4>{{ athlete.name|title }}</h4>
-                            {% if athlete.result2014 %}
-                            <p class="athlete_result">{{ athlete.result2014 }}</p>
-                            {% else %}
-                            <p class="athlete_result">Results not yet reported. Check back soon.</p>
-                            {% endif %}
-                        </div>
-                        {% endif %}
-                        {% if loop.index is divisibleby 2 %}
-                        <div class="col-sm-6 clearfix">
-                            <h4>{{ athlete.name|title }}</h4>
-                            {% if athlete.result2014 %}
-                            <p class="athlete_result">{{ athlete.result2014 }}</p>
-                            {% else %}
-                            <p class="athlete_result">Results not yet reported. Check back soon.</p>
-                            {% endif %}
-                        </div>
-                    </div>
-                        {% endif %}
-                    {% endfor %}
-                    <div class="row">
-
-                        <p class="col-xs-12 olympic_link"><a href="http://www.sochi2014.com/en/last-results" alt="Latest Olympic results">Click here</a> for all of the latest results</p>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 {% include "river.html" %}
 {% endblock %}
 
 {% block scripts %}
-<script src="{{ url_for('static', filename='js/script.3-ck.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.4-ck.js') }}"></script>
 {% endblock %}
