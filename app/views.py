@@ -50,7 +50,7 @@ def index():
         'title': "Olympics 2014: Vermonters in Sochi",
         'subtitle': "VPR's Coverage Of The 2014 Olympics",
         'img': photos[0]['url'],
-        'description': "Read athlete bios and follow VPR's ongoing coverage of Vermonters in the Sochi Games, including upcoming events and daily results.",
+        'description': "Read athlete bios and see final results of Vermonters in the Sochi Games.",
         'twitter_text': "Olympics 2014: Vermonters in Sochi",
         'twitter_hashtag': "Olympics,VT,Sochi2014"
     }
